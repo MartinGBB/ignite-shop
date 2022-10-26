@@ -32,6 +32,14 @@ export default function Product({ product }: ProductProps) {
   )
 }
 
+export const getStaticPaths: GetStaticProps = async () => {
+  return {
+    paths: [
+      { params: { id: ''} }
+    ]
+  }
+}
+
 export const getStaticProps: GetStaticProps<any, { id: string }> = async ({ params }) => {
   const productId = params.id;
 
