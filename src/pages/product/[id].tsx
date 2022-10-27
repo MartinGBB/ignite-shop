@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Stripe from "stripe";
 import { stripe } from "../../lib/stripe";
 import { ImageContainer, ProductContainer, ProductDetails } from "../../styles/pages/product";
+import Loading from "./Loading";
 
 interface ProductProps {
   product: {
@@ -19,7 +20,7 @@ export default function Product({ product }: ProductProps) {
   const { isFallback } = useRouter()
 
   if (isFallback) {
-    return <p>Loading...</p>
+    return <Loading />
   }
   return (
     <ProductContainer>
