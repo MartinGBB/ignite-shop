@@ -16,6 +16,15 @@ export const Header = styled('header', {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
+
+  button: {
+    border: 0,
+    padding: '0.75rem',
+    background: '$gray800',
+    borderRadius: 6,
+    lineHeight: 0,
+    cursor: 'pointer'
+  },
   
   '@media (max-width: 700px)': {
     padding: '2rem',
