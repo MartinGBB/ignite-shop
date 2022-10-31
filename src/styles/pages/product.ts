@@ -7,15 +7,28 @@ export const ProductContainer = styled('main', {
   gap: '4rem',
   margin: '0 auto',
   maxWidth: 1180,
-  padding: '2rem',
+  padding: '0 2rem',
+
+  '@media(max-width: 800px)': {
+    display: 'flex',
+    flexDirection: 'column',
+
+    '& main': {
+      maxHeight: '50vh',
+    },
+
+    ' main > button': {
+      margin: '1rem 0',
+    },
+  }
 })
 
 export const ImageContainer = styled('main', {
   width: '100%',
-  maxWidth: 576,
+  maxHeight: '80vh',
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
   borderRadius: 8,
-  height: '656px',
+  height: '50rem',
 
   display: "flex",
   alignItems: 'center',

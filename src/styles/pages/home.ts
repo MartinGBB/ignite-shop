@@ -15,11 +15,12 @@ export const Product = styled('div', {
   position: 'relative',
   overflow: 'hidden',
 
+  minWidth: '34.5rem',
+
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  maxWidth: '43.5rem',
-  
+
   img: {
     objectFit: 'cover',
   },
@@ -72,6 +73,9 @@ export const Product = styled('div', {
       transform: 'translateY(0%)',
       opacity: 1,
     }
+  },
 
-  }
+  '@media (max-width: 800px)': {
+    minWidth: '23rem',
+  },
 })
