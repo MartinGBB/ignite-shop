@@ -6,7 +6,8 @@ export const ProductContainer = styled('main', {
   alignItems: 'stretch',
   gap: '4rem',
   margin: '0 auto',
-  maxWidth: 1180
+  maxWidth: 1180,
+  padding: '2rem',
 })
 
 export const ImageContainer = styled('main', {
