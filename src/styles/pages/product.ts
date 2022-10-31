@@ -44,14 +44,14 @@ export const ProductDetails = styled('main', {
   flexDirection: 'column',
   
   h1: {
-    fontSize: '$2xl',
+    fontSize: '"$2xl"',
     color: '$gray300',
   },
 
   span: {
     marginTop: '1rem',
     display: 'block',
-    fontSize: '$2xl',
+    fontSize: '2rem',
     color: '$green300',
 
   },
