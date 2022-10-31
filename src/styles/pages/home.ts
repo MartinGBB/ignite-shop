@@ -4,8 +4,9 @@ export const HomeContainer = styled('main', {
   display: "flex",
   width: '100%',
   maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
+  padding: '0 2rem',
   marginLeft: 'auto',
-  minHeight: 656
+  minHeight: '80vh',
 })
 
 export const Product = styled('div', {
@@ -14,12 +15,14 @@ export const Product = styled('div', {
   position: 'relative',
   overflow: 'hidden',
 
+  minWidth: '34.5rem',
+
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
 
   img: {
-    objectFit: 'cover'
+    objectFit: 'cover',
   },
 
   footer: {
@@ -27,28 +30,42 @@ export const Product = styled('div', {
     bottom: '0.25rem',
     left: '0.25rem',
     right: '0.25rem',
-    padding: '2rem',
+    padding: '1.25rem',
     borderRadius: 6,
-
+    
     display: "flex",
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
-
+    
     transform: 'translateY(110%)',
     opacity: 0,
     transition: 'all 0.2s ease-in-out',
+    
+    section: {
+      display: "flex",
+      flexDirection: 'column',
+      justifyContent: 'left',
+      gap: '0.25rem',
 
-    strong: {
-      fontSize: '$lg',
-      color: '$gray100',
+      strong: {
+        fontSize: '$lg',
+        color: '$gray100',
+      },
+  
+      span: {
+        fontSize: '$xl',
+        fontWeight: 'bold',
+        color: '$green300'
+      },
     },
 
-    span: {
-      fontSize: '$xl',
-      fontWeight: 'bold',
-      color: '$green300'
-    },
+    '> span': {
+      padding: '0.75rem',
+      borderRadius: '6px',
+      background: '$green500',
+      lineHeight: 0,
+    }
   },
 
   '&:hover': {
@@ -56,6 +73,9 @@ export const Product = styled('div', {
       transform: 'translateY(0%)',
       opacity: 1,
     }
+  },
 
-  }
+  '@media (max-width: 800px)': {
+    minWidth: '23rem',
+  },
 })

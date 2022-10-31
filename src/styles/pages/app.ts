@@ -5,12 +5,30 @@ export const Container = styled('div', {
   flexDirection: 'column',
   alignItems: "flex-start",
   justifyContent: "center",
-  minHeight: '100vh'
+  position: 'relative',
+  height: '100vh'
 })
 
 export const Header = styled('header', {
-  padding: '2rem 0',
+  padding: '2rem',
   width: '100%',
   maxWidth:1180,
-  margin: '0 auto'
+  margin: '0 auto',
+  
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+
+  button: {
+    border: 0,
+    padding: '0.75rem',
+    background: '$gray800',
+    borderRadius: 6,
+    lineHeight: 0,
+    cursor: 'pointer'
+  },
+  
+  '@media (max-width: 700px)': {
+    padding: '2rem',
+  },
 })

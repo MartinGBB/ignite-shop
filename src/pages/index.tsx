@@ -8,6 +8,7 @@ import { stripe } from "../lib/stripe"
 import Stripe from "stripe"
 import Link from "next/link"
 import Head from "next/head"
+import { Handbag } from "phosphor-react"
 
 interface HomeProps {
   products: {
@@ -21,7 +22,7 @@ interface HomeProps {
 export default function Home({ products }: HomeProps) {
   const [sliderRef] = useKeenSlider({
     slides: {
-      perView: 3,
+      perView: 'auto',
       spacing: 48
     }
   })
@@ -40,8 +41,11 @@ export default function Home({ products }: HomeProps) {
               <Product className="keen-slider__slide">
                 <Image placeholder="blur" blurDataURL={product.imageUrl} src={product.imageUrl} alt="" width={520} height={480} />
                 <footer>
-                  <strong>{product.name}</strong>
-                  <span>{product.price}</span>
+                  <section>
+                    <strong>{product.name}</strong>
+                    <span>{product.price}</span>
+                  </section>
+                  <span><Handbag size={32} color="#FFFFFF" weight="bold" /></span>
                 </footer>
               </Product>
             </Link>
