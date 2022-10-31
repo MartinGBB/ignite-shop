@@ -11,6 +11,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <Container>
       <Header>
         <Image src={logoImg} alt="" />
+        <div role={"button"}>
+          
+        </div>
       </Header>
       <Component {...pageProps} />
     </Container>

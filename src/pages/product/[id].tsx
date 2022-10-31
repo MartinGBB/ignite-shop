@@ -7,7 +7,7 @@ import { useState } from "react";
 import Stripe from "stripe";
 import { stripe } from "../../lib/stripe";
 import { ImageContainer, ProductContainer, ProductDetails } from "../../styles/pages/product";
-import Loading from "./Loading";
+import Loading from "../loading";
 
 interface ProductProps {
   product: {
@@ -60,7 +60,7 @@ export default function Product({ product }: ProductProps) {
           <span>{product.price}</span>
 
           <p>{product.description}</p>
-        <button disabled={isCreatingCheckoutSession} onClick={handleClick}>Comprar agora</button>
+          <button disabled={isCreatingCheckoutSession} onClick={handleClick}>Comprar agora</button>
         </ProductDetails>
       </ProductContainer>
     </>
@@ -70,7 +70,7 @@ export default function Product({ product }: ProductProps) {
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [
-      { params: { id: 'prod_MgDJFmeNQSBfQy'} }
+      { params: { id: 'prod_MgDJFmeNQSBfQy' } }
     ],
     fallback: true,
   }
@@ -84,10 +84,10 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({ para
   })
 
   const price = product.default_price as Stripe.Price
-  
+
   return {
     props: {
-      product: {      
+      product: {
         id: product.id,
         name: product.name,
         imageUrl: product.images[0],

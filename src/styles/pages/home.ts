@@ -17,9 +17,10 @@ export const Product = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-
+  maxWidth: '696px',
+  
   img: {
-    objectFit: 'cover'
+    objectFit: 'cover',
   },
 
   footer: {
@@ -27,28 +28,42 @@ export const Product = styled('div', {
     bottom: '0.25rem',
     left: '0.25rem',
     right: '0.25rem',
-    padding: '2rem',
+    padding: '1.25rem',
     borderRadius: 6,
-
+    
     display: "flex",
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
-
+    
     transform: 'translateY(110%)',
     opacity: 0,
     transition: 'all 0.2s ease-in-out',
+    
+    section: {
+      display: "flex",
+      flexDirection: 'column',
+      justifyContent: 'left',
+      gap: '0.25rem',
 
-    strong: {
-      fontSize: '$lg',
-      color: '$gray100',
+      strong: {
+        fontSize: '$lg',
+        color: '$gray100',
+      },
+  
+      span: {
+        fontSize: '$xl',
+        fontWeight: 'bold',
+        color: '$green300'
+      },
     },
 
-    span: {
-      fontSize: '$xl',
-      fontWeight: 'bold',
-      color: '$green300'
-    },
+    '> span': {
+      padding: '0.75rem',
+      borderRadius: '6px',
+      background: '$green500',
+      lineHeight: 0,
+    }
   },
 
   '&:hover': {
