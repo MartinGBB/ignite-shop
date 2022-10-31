@@ -5,6 +5,8 @@ export const Container = styled('div', {
   flexDirection: 'column',
   alignItems: "flex-start",
   justifyContent: "center",
+  position: 'relative',
+  height: '100vh'
 })
 
 export const Header = styled('header', {
