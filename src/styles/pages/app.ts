@@ -5,12 +5,20 @@ export const Container = styled('div', {
   flexDirection: 'column',
   alignItems: "flex-start",
   justifyContent: "center",
-  minHeight: '100vh'
+  minHeight: '100vh',
 })
 
 export const Header = styled('header', {
-  padding: '2rem 0',
+  padding: '2rem',
   width: '100%',
   maxWidth:1180,
-  margin: '0 auto'
+  margin: '0 auto',
+  
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  
+  '@media (max-width: 700px)': {
+    padding: '2rem',
+  },
 })
