@@ -18,6 +18,44 @@ export default function ShoppingCart() {
           <button>Remover</button>
         </div>
       </Products>
+
+      <Products>
+        <ImageContent>
+
+        </ImageContent>
+
+        <div>
+          <h2>Camiseta Beyond the Limits</h2>
+          <strong>R$ 79,90</strong>
+          <button>Remover</button>
+        </div>
+      </Products>
+
+
+      <Products>
+        <ImageContent>
+
+        </ImageContent>
+
+        <div>
+          <h2>Camiseta Beyond the Limits</h2>
+          <strong>R$ 79,90</strong>
+          <button>Remover</button>
+        </div>
+      </Products>
+
+
+      <Products>
+        <ImageContent>
+
+        </ImageContent>
+
+        <div>
+          <h2>Camiseta Beyond the Limits</h2>
+          <strong>R$ 79,90</strong>
+          <button>Remover</button>
+        </div>
+      </Products>
     </ShoppingCartContainer>
   )
 }

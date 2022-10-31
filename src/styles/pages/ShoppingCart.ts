@@ -9,12 +9,13 @@ export const ShoppingCartContainer = styled('div', {
   height: '100vh',
   maxWidth: '30rem',
   padding: '3rem',
-  paddingTop: '4.5rem',
+  paddingTop: '1.5rem',
 
   span: {
     display: 'flex',
     justifyContent: 'end',
     lineHeight: 0,
+    marginRight: '-24px',
   },
 
   h1 : {
@@ -27,7 +28,9 @@ export const Products = styled('div', {
   display: 'flex',
   justifyContent: 'space-between',
   gap: '1.25rem',
-  
+  margin: '1.5rem 0',
+  maxWidth: '30rem',
+
   div: {
     display: 'flex',
     flexDirection: 'column',
