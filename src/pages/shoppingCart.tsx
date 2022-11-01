@@ -5,7 +5,7 @@ export default function ShoppingCart() {
   return (
     <ShoppingCartContainer>
       <header>
-        <span><X size={24} color="#8D8D99" weight="bold" /> </span>
+        <button><X size={24} weight="bold" /> </button>
         <h1>Sacola de compras</h1>
       </header>
    

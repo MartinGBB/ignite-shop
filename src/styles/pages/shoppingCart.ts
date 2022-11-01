@@ -15,11 +15,21 @@ export const ShoppingCartContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
 
-  span: {
+  'header > button': {
     display: 'flex',
     justifyContent: 'end',
+    margin: 'auto',
     lineHeight: 0,
     marginRight: '-24px',
+    background: 'transparent',
+    border: 'none',
+    cursor: 'pointer',
+    color: '#8D8D99',
+    
+    '&:hover': {
+      color: '$gray100',
+      transition: '1s',
+    }
   },
 
   h1: {
