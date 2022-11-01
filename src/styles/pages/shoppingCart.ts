@@ -10,6 +10,7 @@ export const ShoppingCartContainer = styled('div', {
   maxWidth: '30rem',
   padding: '3rem',
   paddingTop: '1.5rem',
+  boxShadow: '-4px 0px 30px rgba(0, 0, 0, 0.8)',
 
   span: {
     display: 'flex',
@@ -65,4 +66,40 @@ export const ImageContent = styled('div', {
   width: '6.37rem',
   height: '6.37rem',
   borderRadius: '8px',
+})
+
+export const Footer = styled('footer', {
+
+  section: {
+    display: 'grid',
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gridTemplateRows: "repeat(2, 1fr)",
+    justifyItems: 'space-between',
+    gap: 7,
+    
+    '& span': {
+      display: 'flex',
+      justifyContent: 'start',
+      alignItems: 'center',
+      width: '100%'
+    },
+
+    '& span:nth-child(2)': {
+      gridColumn: '3',
+      gridRow: '1',
+      justifyContent: 'end',
+    },
+
+    '& strong:nth-child(3)': {
+      gridColumn: '1',
+      gridRow: '2',
+    },
+    
+    '& strong:nth-child(4)': {
+      gridColumn: '3',
+      gridRow: '2',
+      display: 'flex',
+      justifyContent: 'end',
+    },
+  },
 })
