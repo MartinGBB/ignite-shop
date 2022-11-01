@@ -12,6 +12,9 @@ export const ShoppingCartContainer = styled('div', {
   paddingTop: '1.5rem',
   boxShadow: '-4px 0px 30px rgba(0, 0, 0, 0.8)',
 
+  display: 'flex',
+  flexDirection: 'column',
+
   span: {
     display: 'flex',
     justifyContent: 'end',
@@ -19,8 +22,8 @@ export const ShoppingCartContainer = styled('div', {
     marginRight: '-24px',
   },
 
-  h1 : {
-    margin: '1.25rem 0 2rem',
+  h1: {
+    margin: '1.25rem 0 1.125rem',
     fontSize: "1.25rem"
   },
 })
@@ -29,7 +32,7 @@ export const Products = styled('div', {
   display: 'flex',
   justifyContent: 'space-between',
   gap: '1.25rem',
-  margin: '1.5rem 0',
+  margin: '0.75rem 0',
   maxWidth: '30rem',
 
   div: {
@@ -69,12 +72,12 @@ export const ImageContent = styled('div', {
 })
 
 export const Footer = styled('footer', {
+  marginTop: 'auto',
+  marginBottom: '3.56rem',
 
   section: {
     display: 'grid',
-    gridTemplateColumns: "repeat(3, 1fr)",
     gridTemplateRows: "repeat(2, 1fr)",
-    justifyItems: 'space-between',
     gap: 7,
     
     '& span': {
