@@ -41,7 +41,7 @@ export default function ShoppingCart() {
           <strong>R$ 270,00</strong>
         </section>
 
-        {/* <button>Finalizar compra</button> */}
+        <button>Finalizar compra</button>
       </Footer>
 
     </ShoppingCartContainer>

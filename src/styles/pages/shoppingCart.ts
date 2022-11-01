@@ -60,6 +60,11 @@ export const Products = styled('div', {
       fontSize: '1rem',
 
       cursor: 'pointer', 
+
+      '&:hover': {
+        color: '$green300',
+        transition: '1s',
+      }
     }
   }
 })
@@ -73,12 +78,13 @@ export const ImageContent = styled('div', {
 
 export const Footer = styled('footer', {
   marginTop: 'auto',
-  marginBottom: '3.56rem',
-
+  
   section: {
     display: 'grid',
     gridTemplateRows: "repeat(2, 1fr)",
     gap: 7,
+
+    marginBottom: '3.56rem',
     
     '& span': {
       display: 'flex',
@@ -105,4 +111,27 @@ export const Footer = styled('footer', {
       justifyContent: 'end',
     },
   },
+
+  button: {
+    marginTop: 'auto',
+    background: '$green500',
+    border: 0,
+    color: '$white',
+    borderRadius: 8,
+    padding: '1.25rem',
+    cursor: 'pointer',
+    fontWeight: 'bold',
+    fontSize: '$md',
+    width: '100%',
+
+    '&:disabled': {
+      opacity: 0.6,
+      cursor: 'not-allowed'
+    },
+
+    '&:not(:disabled):hover': {
+      background: '$green300',
+      transition: '1s',
+    }
+  }
 })
