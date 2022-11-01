@@ -19,16 +19,54 @@ export const Header = styled('header', {
   justifyContent: 'space-between',
   alignItems: 'center',
 
+  
+  '@media (max-width: 700px)': {
+    padding: '2rem',
+  },
+})
+
+export const BadContent = styled('section', {
+  position: 'relative',
+  
   button: {
     border: 0,
     padding: '0.75rem',
     background: '$gray800',
     borderRadius: 6,
     lineHeight: 0,
-    cursor: 'pointer'
+    color: '$gray300',
+    cursor: 'pointer',
+    
+    '&:hover': {
+      color: '$gray100',
+      transition: '1s'
+    }
   },
-  
-  '@media (max-width: 700px)': {
-    padding: '2rem',
+
+  variants: {
+    itemsToCart: {
+      false: {
+        span: {
+          display: 'none'
+        }
+      }
+    }
   },
+
+  span: {
+    position: 'absolute',
+    top: -9,
+    right: -9,
+
+    borderRadius: 1000,
+    padding: '0.75rem',
+    background: '$green500',
+    
+    lineHeight: 0,
+    width: 0,
+    border: '3px solid $gray900',
+
+    display: 'flex',
+    justifyContent: 'center',
+  }
 })
