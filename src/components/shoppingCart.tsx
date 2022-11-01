@@ -1,5 +1,5 @@
 import { X } from "phosphor-react";
-import { Footer, ImageContent, Products, ShoppingCartContainer } from "../styles/pages/shoppingCart";
+import { Footer, ImageContent, Products, ShoppingCartContainer } from "../styles/components/shoppingCart";
 
 export default function ShoppingCart() {
   return (

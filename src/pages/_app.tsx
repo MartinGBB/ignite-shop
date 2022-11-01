@@ -6,7 +6,7 @@ import { Container, Header } from "../styles/pages/app"
 import { Handbag } from "phosphor-react"
 import Link from "next/link"
 import { useState } from "react"
-import ShoppingCart from "./shoppingCart"
+import ShoppingCart from "../components/shoppingCart"
 
 globalStyles()
 
