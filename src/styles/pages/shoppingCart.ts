@@ -43,6 +43,7 @@ export const Products = styled('div', {
     h2: {
       fontSize: '1.125rem',
       fontWeight: '400',
+      color: '$gray300'
     },
 
     strong: {
@@ -90,21 +91,27 @@ export const Footer = styled('footer', {
       display: 'flex',
       justifyContent: 'start',
       alignItems: 'center',
-      width: '100%'
+      width: '100%',
     },
 
+    strong: {
+    },
+    
     '& span:nth-child(2)': {
       gridColumn: '3',
       gridRow: '1',
       justifyContent: 'end',
+      color: '$gray300',
     },
-
+    
     '& strong:nth-child(3)': {
+      fontSize: '1.125rem',
       gridColumn: '1',
       gridRow: '2',
     },
     
     '& strong:nth-child(4)': {
+      fontSize: '1.5rem',
       gridColumn: '3',
       gridRow: '2',
       display: 'flex',
