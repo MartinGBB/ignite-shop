@@ -5,9 +5,9 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import Stripe from "stripe";
+import Loading from "../../components/_ui/loading";
 import { stripe } from "../../lib/stripe";
 import { ImageContainer, ProductContainer, ProductDetails } from "../../styles/pages/product";
-import Loading from "../loading";
 
 interface ProductProps {
   product: {

@@ -25,7 +25,7 @@ export const ProductContainer = styled('main', {
 
 export const ImageContainer = styled('main', {
   width: '100%',
-  maxHeight: '80vh',
+  maxHeight: '70vh',
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
   borderRadius: 8,
   height: '50rem',
@@ -53,7 +53,6 @@ export const ProductDetails = styled('main', {
     display: 'block',
     fontSize: '2rem',
     color: '$green300',
-
   },
 
   p: {
