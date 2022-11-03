@@ -40,7 +40,6 @@ export const ShoppingCartContainer = styled('div', {
 
 export const Products = styled('div', {
   display: 'flex',
-  justifyContent: 'space-between',
   gap: '1.25rem',
   margin: '0.75rem 0',
   maxWidth: '30rem',
