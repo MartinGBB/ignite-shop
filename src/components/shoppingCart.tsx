@@ -1,11 +1,16 @@
 import { X } from "phosphor-react";
 import { Footer, ImageContent, Products, ShoppingCartContainer } from "../styles/components/shoppingCart";
 
-export default function ShoppingCart() {
+export default function ShoppingCart({ shoppingCartOpen }) {
+
+  function handleCloseShoppingCart() {
+    shoppingCartOpen(false)
+  }
+
   return (
     <ShoppingCartContainer>
       <header>
-        <button><X size={24} weight="bold" /> </button>
+        <button onClick={ handleCloseShoppingCart }><X size={24} weight="bold" /> </button>
         <h1>Sacola de compras</h1>
       </header>
    
