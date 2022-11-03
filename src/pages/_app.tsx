@@ -4,6 +4,7 @@ import { Container } from "../styles/pages/app"
 import { useState } from "react"
 import ShoppingCart from "../components/shoppingCart"
 import HeaderC from "../components/header"
+import { ProductProvider } from "../context/ProductContext"
 
 globalStyles()
 
@@ -16,9 +17,11 @@ export default function App({ Component, pageProps }: AppProps) {
   
   return (
     <Container>
-      <HeaderC shoppingCartOpen={shoppingCartOpen} />
-      { openShoppingCart && <ShoppingCart shoppingCartOpen={shoppingCartOpen} /> }
-      <Component {...pageProps} />
+      <ProductProvider>
+        <HeaderC shoppingCartOpen={shoppingCartOpen} />
+        { openShoppingCart && <ShoppingCart shoppingCartOpen={shoppingCartOpen} /> }
+        <Component {...pageProps} />
+      </ProductProvider>
     </Container>
   )
 }
