@@ -38,7 +38,25 @@ export const ShoppingCartContainer = styled('div', {
   },
 })
 
-export const Products = styled('div', {
+export const ProductContainer = styled('div', {
+  overflow: 'auto',
+
+  '&::-webkit-scrollbar': {
+    width: '0.25rem',
+  },
+
+  '&::-webkit-scrollbar-track-piece': {
+    background: '$green300',
+  },
+  
+  '&::-webkit-scrollbar-thumb': {
+    background: '$green500',
+    borderRadius: 1000,
+  },
+
+})
+
+export const Products = styled('section', {
   display: 'flex',
   gap: '1.25rem',
   margin: '0.75rem 0',

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { X } from "phosphor-react";
 import { useContext } from "react";
 import { ProductContext } from "../context/ProductContext";
-import { Footer, ImageContent, Products, ShoppingCartContainer } from "../styles/components/shoppingCart";
+import { Footer, ImageContent, ProductContainer, Products, ShoppingCartContainer } from "../styles/components/shoppingCart";
 
 export default function ShoppingCart({ shoppingCartOpen }) {
   const { setProductCart, productCart } = useContext(ProductContext)
@@ -10,7 +10,7 @@ export default function ShoppingCart({ shoppingCartOpen }) {
   function handleCloseShoppingCart() {
     shoppingCartOpen(false)
   }
-console.log(productCart)
+
   return (
     <ShoppingCartContainer>
       <header>
@@ -18,9 +18,11 @@ console.log(productCart)
         <h1>Sacola de compras</h1>
       </header>
 
+      <ProductContainer>
+
       {productCart.map((product) => {
         return (
-          <Products>
+          <Products key={product.id}>
             <ImageContent>
               <Image
                 src={product.imageUrl}
@@ -28,7 +30,7 @@ console.log(productCart)
                 placeholder="blur"
                 width={94.79}
                 height={94.79}
-              />
+                />
             </ImageContent>
 
             <div>
@@ -39,6 +41,7 @@ console.log(productCart)
           </Products>
         )
       })}
+      </ProductContainer>
 
       <Footer>
         <section>
