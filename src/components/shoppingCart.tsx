@@ -11,6 +11,13 @@ export default function ShoppingCart({ shoppingCartOpen }) {
     shoppingCartOpen(false)
   }
 
+  function handleDelete(id: string) {
+    const removeProduct = productCart
+      .filter((product) => product.id !== id)
+
+    setProductCart((removeProduct))
+  }
+
   return (
     <ShoppingCartContainer>
       <header>
@@ -36,7 +43,7 @@ export default function ShoppingCart({ shoppingCartOpen }) {
             <div>
               <h2>{product.name}</h2>
               <strong>{product.price}</strong>
-              <button>Remover</button>
+              <button onClick={() => handleDelete(product.id)}>Remover</button>
             </div>
           </Products>
         )

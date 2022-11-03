@@ -45,6 +45,13 @@ export default function Product({ product }: ProductProps) {
   // }
 
   function handleClick() {
+    const productRepeat = productCart.some((productInCart) => (
+      productInCart.id === product.id
+    ))
+
+    if (productRepeat) {
+      return alert('produto já adicionado')
+    }
     setProductCart([product, ...productCart])
   }
 
