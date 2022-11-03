@@ -3,9 +3,10 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Stripe from "stripe";
 import Loading from "../../components/_ui/loading";
+import { ProductContext } from "../../context/ProductContext";
 import { stripe } from "../../lib/stripe";
 import { ImageContainer, ProductContainer, ProductDetails } from "../../styles/pages/product";
 
@@ -21,29 +22,41 @@ interface ProductProps {
 }
 
 export default function Product({ product }: ProductProps) {
-  const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
+  // const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
+  const { setProductCart, productCart } = useContext(ProductContext)
+
   const { isFallback } = useRouter()
 
-  async function handleClick() {
-    try {
-      setIsCreatingCheckoutSession(true)
+  // async function handleClick() {
+  //   try {
+  //     setIsCreatingCheckoutSession(true)
 
-      const response = await axios.post('/api/checkout', {
-        priceId: product.defaultPriceId
-      })
+  //     const response = await axios.post('/api/checkout', {
+  //       priceId: product.defaultPriceId
+  //     })
 
-      const { checkoutUrl } = response.data
+  //     const { checkoutUrl } = response.data
 
-      window.location.href = checkoutUrl
-    } catch (err) {
-      setIsCreatingCheckoutSession(false)
-      alert('falha ao redirecionar')
+  //     window.location.href = checkoutUrl
+  //   } catch (err) {
+  //     setIsCreatingCheckoutSession(false)
+  //     alert('falha ao redirecionar')
+  //   }
+  // }
+
+  function handleClick() {
+    const productRepeat = productCart.some((productInCart) => (
+      productInCart.id === product.id
+    ))
+
+    if (productRepeat) {
+      return alert('produto já adicionado')
     }
+    setProductCart([product, ...productCart])
   }
 
-  if (isFallback) {
-    return <Loading />
-  }
+  if (isFallback) return <Loading />
+
   return (
     <>
       <Head>
@@ -60,7 +73,7 @@ export default function Product({ product }: ProductProps) {
           <span>{product.price}</span>
 
           <p>{product.description}</p>
-          <button disabled={isCreatingCheckoutSession} onClick={handleClick}>Comprar agora</button>
+          <button disabled={false} onClick={handleClick}>Colocar na sacola</button>
         </ProductDetails>
       </ProductContainer>
     </>

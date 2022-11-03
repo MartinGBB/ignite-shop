@@ -13,11 +13,7 @@ export const ProductContainer = styled('main', {
     display: 'flex',
     flexDirection: 'column',
 
-    '& main': {
-      maxHeight: '50vh',
-    },
-
-    ' main > button': {
+    'main > button': {
       margin: '1rem 0',
     },
   }
@@ -28,15 +24,10 @@ export const ImageContainer = styled('main', {
   maxHeight: '70vh',
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
   borderRadius: 8,
-  height: '50rem',
 
   display: "flex",
   alignItems: 'center',
   justifyContent: "center",
-
-  img: {
-    objectFit: 'cover',
-  }
 })
 
 export const ProductDetails = styled('main', {

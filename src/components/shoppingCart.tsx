@@ -1,37 +1,54 @@
+import Image from "next/image";
 import { X } from "phosphor-react";
-import { Footer, ImageContent, Products, ShoppingCartContainer } from "../styles/components/shoppingCart";
+import { useContext } from "react";
+import { ProductContext } from "../context/ProductContext";
+import { Footer, ImageContent, ProductContainer, Products, ShoppingCartContainer } from "../styles/components/shoppingCart";
 
-export default function ShoppingCart() {
+export default function ShoppingCart({ shoppingCartOpen }) {
+  const { setProductCart, productCart } = useContext(ProductContext)
+
+  function handleCloseShoppingCart() {
+    shoppingCartOpen(false)
+  }
+
+  function handleDelete(id: string) {
+    const removeProduct = productCart
+      .filter((product) => product.id !== id)
+
+    setProductCart((removeProduct))
+  }
+
   return (
     <ShoppingCartContainer>
       <header>
-        <button><X size={24} weight="bold" /> </button>
+        <button onClick={ handleCloseShoppingCart }><X size={24} weight="bold" /> </button>
         <h1>Sacola de compras</h1>
       </header>
-   
-      <Products>
-        <ImageContent>
 
-        </ImageContent>
+      <ProductContainer>
 
-        <div>
-          <h2>Camiseta Beyond the Limits</h2>
-          <strong>R$ 79,90</strong>
-          <button>Remover</button>
-        </div>
-      </Products>
+      {productCart.map((product) => {
+        return (
+          <Products key={product.id}>
+            <ImageContent>
+              <Image
+                src={product.imageUrl}
+                blurDataURL={product.imageUrl}
+                placeholder="blur"
+                width={94.79}
+                height={94.79}
+                />
+            </ImageContent>
 
-      <Products>
-        <ImageContent>
-
-        </ImageContent>
-
-        <div>
-          <h2>Camiseta Beyond the Limits</h2>
-          <strong>R$ 79,90</strong>
-          <button>Remover</button>
-        </div>
-      </Products>
+            <div>
+              <h2>{product.name}</h2>
+              <strong>{product.price}</strong>
+              <button onClick={() => handleDelete(product.id)}>Remover</button>
+            </div>
+          </Products>
+        )
+      })}
+      </ProductContainer>
 
       <Footer>
         <section>
