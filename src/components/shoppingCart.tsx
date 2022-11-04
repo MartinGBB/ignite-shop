@@ -9,9 +9,9 @@ import { useShoppingCart } from 'use-shopping-cart'
 export default function ShoppingCart({ shoppingCartOpen }) {
   const {
     cartDetails,
+    cartCount, 
+    removeItem,
   } = useShoppingCart()
-
-  const { setProductCart, productCart } = useContext(ProductContext)
 
   const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
   
@@ -38,10 +38,7 @@ export default function ShoppingCart({ shoppingCartOpen }) {
   }
 
   function handleDelete(id: string) {
-    const removeProduct = productCart
-      .filter((product) => product.id !== id)
-
-    setProductCart((removeProduct))
+    removeItem(id)
   }
 
   return (
@@ -80,7 +77,7 @@ export default function ShoppingCart({ shoppingCartOpen }) {
       <Footer>
         <section>
           <span>Quantidade</span>
-          <span>3 itens</span>
+          <span>{`${cartCount} itens`}</span>
           <strong>Valor total</strong>
           <strong>R$ 270,00</strong>
         </section>
