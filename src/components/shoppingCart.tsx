@@ -1,10 +1,9 @@
 import axios from "axios";
 import Image from "next/image";
 import { X } from "phosphor-react";
-import { useContext, useState } from "react";
-import { ProductContext } from "../context/ProductContext";
 import { Footer, ImageContent, ProductContainer, Products, ShoppingCartContainer } from "../styles/components/shoppingCart";
-import { useShoppingCart, formatCurrencyString } from 'use-shopping-cart'
+import { useShoppingCart } from 'use-shopping-cart'
+import { useState } from "react";
 
 export default function ShoppingCart({ shoppingCartOpen }) {
   const {
@@ -15,13 +14,6 @@ export default function ShoppingCart({ shoppingCartOpen }) {
   } = useShoppingCart()
 
   const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
-  
-  function formatPrice(price: number) {
-    formatCurrencyString({
-      value: price,
-      currency: 'BRL'
-    })
-  }
 
   async function handleClick() {
     try {
