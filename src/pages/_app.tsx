@@ -5,6 +5,7 @@ import { useState } from "react"
 import ShoppingCart from "../components/shoppingCart"
 import HeaderC from "../components/header"
 import { ProductProvider } from "../context/ProductContext"
+import { CartProvider } from 'use-shopping-cart'
 
 globalStyles()
 
@@ -17,11 +18,17 @@ export default function App({ Component, pageProps }: AppProps) {
   
   return (
     <Container>
-      <ProductProvider>
-        <HeaderC shoppingCartOpen={shoppingCartOpen} />
-        { openShoppingCart && <ShoppingCart shoppingCartOpen={shoppingCartOpen} /> }
-        <Component {...pageProps} />
-      </ProductProvider>
+      <CartProvider
+        cartMode="checkout-session"
+        stripe={process.env.STRIPE_PUBLIC_KEY}
+        currency="BRL"
+      >
+        <ProductProvider>
+          <HeaderC shoppingCartOpen={shoppingCartOpen} />
+          { openShoppingCart && <ShoppingCart shoppingCartOpen={shoppingCartOpen} /> }
+          <Component {...pageProps} />
+        </ProductProvider>
+      </CartProvider>
     </Container>
   )
 }

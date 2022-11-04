@@ -9,6 +9,7 @@ import Loading from "../../components/_ui/loading";
 import { ProductContext } from "../../context/ProductContext";
 import { stripe } from "../../lib/stripe";
 import { ImageContainer, ProductContainer, ProductDetails } from "../../styles/pages/product";
+import { useShoppingCart } from 'use-shopping-cart'
 
 interface ProductProps {
   product: {
@@ -16,12 +17,14 @@ interface ProductProps {
     name: string
     imageUrl: string
     price: string
+    priceString: string
     description: string
     defaultPriceId: string
   }
 }
 
 export default function Product({ product }: ProductProps) {
+  const { addItem } = useShoppingCart() 
   // const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
   const { setProductCart, productCart } = useContext(ProductContext)
 
@@ -52,6 +55,17 @@ export default function Product({ product }: ProductProps) {
     if (productRepeat) {
       return alert('produto já adicionado')
     }
+
+    addItem({
+      currency: 'BRL',
+      id: product.id,
+      name: product.name,
+      price: Number(product.priceString),
+      price_id: product.defaultPriceId,
+      image: product.imageUrl,
+      description: product.description,
+    })
+
     setProductCart([product, ...productCart])
   }
 
@@ -96,6 +110,7 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({ para
     expand: ['default_price']
   })
 
+  const priceString = product.default_price
   const price = product.default_price as Stripe.Price
 
   return {
@@ -104,6 +119,7 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({ para
         id: product.id,
         name: product.name,
         imageUrl: product.images[0],
+        priceString: price.unit_amount,
         price: new Intl.NumberFormat('pt-BR', {
           style: 'currency',
           currency: 'BRL'
