@@ -4,17 +4,25 @@ import { X } from "phosphor-react";
 import { useContext, useState } from "react";
 import { ProductContext } from "../context/ProductContext";
 import { Footer, ImageContent, ProductContainer, Products, ShoppingCartContainer } from "../styles/components/shoppingCart";
-import { useShoppingCart } from 'use-shopping-cart'
+import { useShoppingCart, formatCurrencyString } from 'use-shopping-cart'
 
 export default function ShoppingCart({ shoppingCartOpen }) {
   const {
     cartDetails,
     cartCount, 
     removeItem,
+    formattedTotalPrice,
   } = useShoppingCart()
 
   const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
   
+  function formatPrice(price: number) {
+    formatCurrencyString({
+      value: price,
+      currency: 'BRL'
+    })
+  }
+
   async function handleClick() {
     try {
       setIsCreatingCheckoutSession(true)
@@ -66,7 +74,7 @@ export default function ShoppingCart({ shoppingCartOpen }) {
 
             <div>
               <h2>{cartDetails[key].name}</h2>
-              <strong>{cartDetails[key].price}</strong>
+              <strong>{cartDetails[key].formattedValue}</strong>
               <button onClick={() => handleDelete(cartDetails[key].id)}>Remover</button>
             </div>
           </Products>
@@ -79,7 +87,7 @@ export default function ShoppingCart({ shoppingCartOpen }) {
           <span>Quantidade</span>
           <span>{`${cartCount} itens`}</span>
           <strong>Valor total</strong>
-          <strong>R$ 270,00</strong>
+          <strong>{formattedTotalPrice}</strong>
         </section>
 
         <button disabled={isCreatingCheckoutSession} onClick={handleClick}>Finalizar compra</button>
