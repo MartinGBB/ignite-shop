@@ -22,7 +22,7 @@ interface ProductProps {
 }
 
 export default function Product({ product }: ProductProps) {
-  const { addItem, cartDetails } = useShoppingCart() 
+  const { addItem, cartDetails } = useShoppingCart()
 
   const { isFallback } = useRouter()
 

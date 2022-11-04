@@ -3,13 +3,12 @@ import Image from "next/image"
 import { BadContent, Header } from "../styles/pages/app"
 import { Handbag } from "phosphor-react"
 import Link from "next/link"
-import { useContext } from 'react'
-import { ProductContext } from '../context/ProductContext'
+import { useShoppingCart } from 'use-shopping-cart'
 
 export default function HeaderC({ shoppingCartOpen }) {
-  const { productCart } = useContext(ProductContext)
+  const { cartDetails } = useShoppingCart() 
   
-  const itemsToCart = productCart.length
+  const itemsToCart = Object.keys(cartDetails).length
   const haveItemsToCart = !!itemsToCart
   
   function handleShoppingCart() {
