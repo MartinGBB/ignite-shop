@@ -38,6 +38,11 @@ export const ShoppingCartContainer = styled('div', {
   },
 })
 
+export const CartEmpty = styled('div', {
+  margin: '0.75rem 3.5rem 0 0',
+  maxWidth: '30rem',
+})
+
 export const ProductContainer = styled('div', {
   overflow: 'auto',
 
@@ -169,3 +174,4 @@ export const Footer = styled('footer', {
     }
   }
 })
+
