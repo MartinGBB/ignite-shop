@@ -43,6 +43,9 @@ export default function ShoppingCart({ shoppingCartOpen }) {
     removeItem(id)
   }
 
+  const productsInCart = Object.keys(cartDetails)
+  const cartEmpty = !productsInCart.length 
+
   return (
     <ShoppingCartContainer>
       <header>
@@ -53,12 +56,12 @@ export default function ShoppingCart({ shoppingCartOpen }) {
       <ProductContainer>
 
       {
-      !Object.keys(cartDetails).length 
+      cartEmpty
       ? <CartEmpty>
           <p>Vocẽ ainda não tem produtos no carrinho</p>
         </CartEmpty>
       :
-      Object.keys(cartDetails).map((key) => {
+      productsInCart.map((key) => {
         return (
           <Products key={cartDetails[key].id}>
             <ImageContent>
