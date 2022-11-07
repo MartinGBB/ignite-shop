@@ -5,7 +5,7 @@ import Link from "next/link"
 import Stripe from "stripe"
 import { useShoppingCart } from "use-shopping-cart"
 import { stripe } from "../lib/stripe"
-import { SuccessContainer, ImageContainer } from "../styles/pages/success"
+import { SuccessContainer, ImageContainer, ImageContent } from "../styles/pages/success"
 
 interface SuccessProps {
   customerName: string
@@ -27,20 +27,22 @@ export default function Success({ customerName, product }: SuccessProps) {
     </Head>
 
     <SuccessContainer>
-      {product.map((item) => {
-        return (
-          <ImageContainer key={item.id}>
-            <Image
-              placeholder="blur"
-              blurDataURL={item.images[0]}
-              src={item.images[0]}
-              width={120}
-              height={110}
-              alt={item.name}
-              />
-          </ImageContainer>
-        )
-      })}
+      <ImageContainer>
+        {product.map((item) => {
+          return (
+            <ImageContent key={item.id}>
+                <Image
+                  placeholder="blur"
+                  blurDataURL={item.images[0]}
+                  src={item.images[0]}
+                  width={120}
+                  height={110}
+                  alt={item.name}
+                />
+            </ImageContent>
+          )
+        })}
+      </ImageContainer>
 
       <h1>Compra efetuada!</h1>
       <p>
