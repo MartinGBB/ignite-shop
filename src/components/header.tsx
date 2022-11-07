@@ -1,6 +1,6 @@
 import logoImg from '../assets/logo.svg'
 import Image from "next/image"
-import { BadContent, Header } from "../styles/pages/app"
+import { BadContent, Header } from "../styles/components/header"
 import { Handbag } from "phosphor-react"
 import Link from "next/link"
 import { useShoppingCart } from 'use-shopping-cart'
