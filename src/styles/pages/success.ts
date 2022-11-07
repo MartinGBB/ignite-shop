@@ -7,6 +7,7 @@ export const SuccessContainer = styled('main', {
   justifyContent: 'center',
   margin: '0 auto',
   height: 656,
+  padding: '0 2rem',
 
   h1: {
     color: '$gray100',
@@ -24,7 +25,7 @@ export const SuccessContainer = styled('main', {
   a: {
     display: 'block',
     marginTop: '5rem',
-    fontSize: '$lg',
+    fontSize: '1.25rem',
     color: '$green500',
     textDecoration: 'none',
     fontWeight: 'bold',
@@ -56,7 +57,11 @@ export const ImageContent = styled('section', {
   zIndex: 1,
   
   '&:not(:first-child)': {
-    marginLeft: '-10%',
+    marginLeft: 'calc((280px/2) - 50%)',
+  },
+  
+  '&:hover': {
+    zIndex: 2,
   },
   
   img: {

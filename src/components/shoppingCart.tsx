@@ -8,6 +8,7 @@ import { useState } from "react";
 export default function ShoppingCart({ shoppingCartOpen }) {
   const {
     cartDetails,
+    clearCart,
     cartCount, 
     removeItem,
     formattedTotalPrice,
@@ -25,7 +26,8 @@ export default function ShoppingCart({ shoppingCartOpen }) {
 
       const { checkoutUrl } = response.data
 
-       window.location.href = checkoutUrl
+      clearCart()
+      window.location.href = checkoutUrl
     } catch (err) {
         setIsCreatingCheckoutSession(false)
         console.log(err.message)

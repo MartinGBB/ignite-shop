@@ -3,7 +3,6 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 import Stripe from "stripe"
-import { useShoppingCart } from "use-shopping-cart"
 import { stripe } from "../lib/stripe"
 import { SuccessContainer, ImageContainer, ImageContent } from "../styles/pages/success"
 
@@ -14,7 +13,6 @@ interface SuccessProps {
 
 
 export default function Success({ customerName, product }: SuccessProps) {
-
   const pluralOrSingular = (length: number) => (
     length > 1 ? 'camisetas' : 'camiseta'
   )
