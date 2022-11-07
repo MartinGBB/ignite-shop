@@ -9,16 +9,15 @@ export const SuccessContainer = styled('main', {
   height: 656,
 
   h1: {
-    fontSize: '$2xl',
     color: '$gray100',
+    margin: '2.375rem 0 1.5rem'
   },
 
   p: {
-    fontSize: '$xl',
+    fontSize: '1.5rem',
     color: "$gray300",
     maxWidth: 560,
     textAlign: 'center',
-    marginTop: '2rem',
     lineHeight: 1.4,
   },
 
