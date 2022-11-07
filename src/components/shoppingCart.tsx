@@ -1,7 +1,7 @@
 import axios from "axios";
 import Image from "next/image";
 import { X } from "phosphor-react";
-import { Footer, ImageContent, ProductContainer, Products, ShoppingCartContainer } from "../styles/components/shoppingCart";
+import { CartEmpty, Footer, ImageContent, ProductContainer, Products, ShoppingCartContainer } from "../styles/components/shoppingCart";
 import { useShoppingCart } from 'use-shopping-cart'
 import { useState } from "react";
 
@@ -26,8 +26,8 @@ export default function ShoppingCart({ shoppingCartOpen }) {
 
       const { checkoutUrl } = response.data
 
-      clearCart()
       window.location.href = checkoutUrl
+      clearCart()
     } catch (err) {
         setIsCreatingCheckoutSession(false)
         console.log(err.message)
@@ -52,7 +52,13 @@ export default function ShoppingCart({ shoppingCartOpen }) {
 
       <ProductContainer>
 
-      {Object.keys(cartDetails).map((key) => {
+      {
+      !Object.keys(cartDetails).length 
+      ? <CartEmpty>
+          <p>Vocẽ ainda não tem produtos no carrinho</p>
+        </CartEmpty>
+      :
+      Object.keys(cartDetails).map((key) => {
         return (
           <Products key={cartDetails[key].id}>
             <ImageContent>
