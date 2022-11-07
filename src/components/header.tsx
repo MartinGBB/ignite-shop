@@ -4,6 +4,7 @@ import { BadContent, Header } from "../styles/pages/app"
 import { Handbag } from "phosphor-react"
 import Link from "next/link"
 import { useShoppingCart } from 'use-shopping-cart'
+import { useRouter } from 'next/router'
 
 export default function HeaderC({ shoppingCartOpen }) {
   const { cartDetails } = useShoppingCart() 
@@ -11,6 +12,10 @@ export default function HeaderC({ shoppingCartOpen }) {
   const itemsToCart = Object.keys(cartDetails).length
   const haveItemsToCart = !!itemsToCart
   
+  const { route } = useRouter()
+
+  const showSoppingCart = !route.includes('/success')
+
   function handleShoppingCart() {
     shoppingCartOpen(true)
   }
@@ -21,12 +26,14 @@ export default function HeaderC({ shoppingCartOpen }) {
         <Image src={logoImg} alt="" />
       </Link>
 
-      <BadContent itemsToCart={haveItemsToCart}>
-        <button onClick={handleShoppingCart}>
-          <Handbag size={32} weight="bold" />
-        </button>
-        <span>{itemsToCart}</span>
-      </BadContent>
+        {showSoppingCart && (
+          <BadContent itemsToCart={haveItemsToCart}>
+            <button onClick={handleShoppingCart}>
+              <Handbag size={32} weight="bold" />
+            </button>
+            <span>{itemsToCart}</span>
+          </BadContent>)
+        }
     </Header>
   )
 }
