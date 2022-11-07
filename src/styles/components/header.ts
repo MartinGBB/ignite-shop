@@ -1,6 +1,6 @@
 import { styled } from ".."
 
-export const Header = styled('header', {
+export const HeaderContainer = styled('header', {
   padding: '2rem',
   width: '100%',
   maxWidth:1180,
@@ -10,10 +10,13 @@ export const Header = styled('header', {
   justifyContent: 'space-between',
   alignItems: 'center',
 
-  
-  '@media (max-width: 700px)': {
-    padding: '2rem',
-  },
+  variants: {
+    showSoppingCart: {
+      false: {
+        justifyContent: 'center'
+      }
+    }
+  }
 })
 
 export const BadContent = styled('section', {
