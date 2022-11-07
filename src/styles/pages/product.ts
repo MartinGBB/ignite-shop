@@ -8,6 +8,7 @@ export const ProductContainer = styled('main', {
   margin: '0 auto',
   maxWidth: 1180,
   padding: '0 2rem',
+  height: '80vh',
 
   '@media(max-width: 800px)': {
     display: 'flex',
@@ -21,10 +22,10 @@ export const ProductContainer = styled('main', {
 
 export const ImageContainer = styled('main', {
   width: '100%',
-  maxHeight: '70vh',
+  maxHeight: '80vh',
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
   borderRadius: 8,
-
+  
   display: "flex",
   alignItems: 'center',
   justifyContent: "center",
