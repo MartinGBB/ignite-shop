@@ -13,39 +13,40 @@ export default function ShoppingCart({ shoppingCartOpen }) {
     removeItem,
     formattedTotalPrice,
   } = useShoppingCart()
-
+  
   const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
-
-  async function handleClick() {
+  
+  async function handleFinalizeBuy() {
     try {
       setIsCreatingCheckoutSession(true)
-
+      
       const response = await axios.post('/api/checkout', {
         products: cartDetails
       })
-
+      
       const { checkoutUrl } = response.data
-
+      
       window.location.href = checkoutUrl
       clearCart()
     } catch (err) {
-        setIsCreatingCheckoutSession(false)
-        console.log(err.message)
-        alert('falha ao redirecionar')
+      setIsCreatingCheckoutSession(false)
+      console.log(err.message)
+      alert('falha ao redirecionar')
     }
   }
-
+  
   function handleCloseShoppingCart() {
     shoppingCartOpen(false)
   }
-
+  
   function handleDelete(id: string) {
     removeItem(id)
   }
-
+  
   const productsInCart = Object.keys(cartDetails)
-  const cartEmpty = !productsInCart.length 
-
+  const cartEmpty = !productsInCart.length
+  const buttonDisabled = isCreatingCheckoutSession || cartEmpty
+  
   return (
     <ShoppingCartContainer>
       <header>
@@ -93,7 +94,7 @@ export default function ShoppingCart({ shoppingCartOpen }) {
           <strong>{formattedTotalPrice}</strong>
         </section>
 
-        <button disabled={isCreatingCheckoutSession} onClick={handleClick}>Finalizar compra</button>
+        <button disabled={buttonDisabled} onClick={handleFinalizeBuy}>Finalizar compra</button>
       </Footer>
 
     </ShoppingCartContainer>

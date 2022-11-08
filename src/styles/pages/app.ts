@@ -6,5 +6,6 @@ export const Container = styled('div', {
   alignItems: "flex-start",
   justifyContent: "center",
   position: 'relative',
-  height: '100vh'
+  height: '100vh',
+  overflow: 'hidden',
 })

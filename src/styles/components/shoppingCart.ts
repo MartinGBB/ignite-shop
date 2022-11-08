@@ -25,7 +25,7 @@ export const ShoppingCartContainer = styled('div', {
     border: 'none',
     cursor: 'pointer',
     color: '#8D8D99',
-    
+
     '&:hover': {
       color: '$gray100',
       transition: '1s',
@@ -53,7 +53,7 @@ export const ProductContainer = styled('div', {
   '&::-webkit-scrollbar-track-piece': {
     background: '$green300',
   },
-  
+
   '&::-webkit-scrollbar-thumb': {
     background: '$green500',
     borderRadius: 1000,
@@ -81,7 +81,7 @@ export const Products = styled('section', {
     strong: {
       fontSize: '1.125rem',
     },
-  
+
     button: {
       border: 'none',
       background: 'transparent',
@@ -92,7 +92,7 @@ export const Products = styled('section', {
       marginTop: 'auto',
       fontSize: '1rem',
 
-      cursor: 'pointer', 
+      cursor: 'pointer',
 
       '&:hover': {
         color: '$green300',
@@ -111,14 +111,14 @@ export const ImageContent = styled('div', {
 
 export const Footer = styled('footer', {
   marginTop: 'auto',
-  
+
   section: {
     display: 'grid',
     gridTemplateRows: "repeat(2, 1fr)",
     gap: 7,
 
     marginBottom: '3.56rem',
-    
+
     '& span': {
       display: 'flex',
       justifyContent: 'start',
@@ -128,20 +128,20 @@ export const Footer = styled('footer', {
 
     strong: {
     },
-    
+
     '& span:nth-child(2)': {
       gridColumn: '3',
       gridRow: '1',
       justifyContent: 'end',
       color: '$gray300',
     },
-    
+
     '& strong:nth-child(3)': {
       fontSize: '1.125rem',
       gridColumn: '1',
       gridRow: '2',
     },
-    
+
     '& strong:nth-child(4)': {
       fontSize: '1.5rem',
       gridColumn: '3',
