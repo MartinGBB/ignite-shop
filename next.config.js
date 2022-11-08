@@ -16,8 +16,8 @@ const nextConfig = {
     newNextLinkBehavior: true,
     images: {
       allowFutureImage: true,
-    }
-  }
+    },
+  },
 }
 
 module.exports = nextConfig
