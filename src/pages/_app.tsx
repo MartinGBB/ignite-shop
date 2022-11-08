@@ -1,9 +1,9 @@
-import { AppProps } from "next/app"
-import { globalStyles } from "../styles/global"
-import { Container } from "../styles/pages/app"
-import { useState } from "react"
-import ShoppingCart from "../components/shoppingCart"
-import HeaderC from "../components/header"
+import { AppProps } from 'next/app'
+import { globalStyles } from '../styles/global'
+import { Container } from '../styles/pages/app'
+import { useState } from 'react'
+import ShoppingCart from '../components/shoppingCart'
+import HeaderC from '../components/header'
 import { CartProvider } from 'use-shopping-cart'
 
 globalStyles()
@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
   function shoppingCartOpen(openCart: boolean) {
     setOpenShoppingCart(openCart)
   }
-  
+
   return (
     <Container>
       <CartProvider
@@ -23,7 +23,9 @@ export default function App({ Component, pageProps }: AppProps) {
         currency="BRL"
       >
         <HeaderC shoppingCartOpen={shoppingCartOpen} />
-        { openShoppingCart && <ShoppingCart shoppingCartOpen={shoppingCartOpen} /> }
+        {openShoppingCart && (
+          <ShoppingCart shoppingCartOpen={shoppingCartOpen} />
+        )}
         <Component {...pageProps} />
       </CartProvider>
     </Container>

@@ -1,5 +1,4 @@
-import { LoadingContainer } from "../../styles/components/loading";
-
+import { LoadingContainer } from '../../styles/components/loading'
 
 export default function Loading() {
   return (
