@@ -7,6 +7,8 @@ export default async function handler(
 ) {
   const { products } = req.body
 
+  const { VERCEL_URL, NEXT_URL } = process.env
+
   if (!products) {
     return res.status(400).json({ error: 'Price not found.' })
   }
@@ -15,7 +17,9 @@ export default async function handler(
     return res.status(405).json({ error: 'Method not allowed.' })
   }
 
-  const successUrl = `${process.env.NEXT_URL}/success?session_id={CHECKOUT_SESSION_ID}`
+  const successUrl = `${
+    VERCEL_URL || NEXT_URL
+  }/success?session_id={CHECKOUT_SESSION_ID}`
   const cancelUrl = `${process.env.NEXT_URL}/`
 
   const arrProducts = Object.keys(products).map((key) => products[key])
