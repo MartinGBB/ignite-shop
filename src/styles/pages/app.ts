@@ -1,10 +1,11 @@
-import { styled } from "..";
+import { styled } from '..'
 
 export const Container = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  alignItems: "flex-start",
-  justifyContent: "center",
+  alignItems: 'flex-start',
+  justifyContent: 'center',
   position: 'relative',
-  height: '100vh'
+  height: '100vh',
+  overflow: 'hidden',
 })

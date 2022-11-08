@@ -1,4 +1,4 @@
-import { styled } from "..";
+import { styled } from '..'
 
 export const ShoppingCartContainer = styled('div', {
   position: 'absolute',
@@ -25,16 +25,16 @@ export const ShoppingCartContainer = styled('div', {
     border: 'none',
     cursor: 'pointer',
     color: '#8D8D99',
-    
+
     '&:hover': {
       color: '$gray100',
       transition: '1s',
-    }
+    },
   },
 
   h1: {
     margin: '1.25rem 0 1.125rem',
-    fontSize: "1.25rem"
+    fontSize: '1.25rem',
   },
 })
 
@@ -53,12 +53,11 @@ export const ProductContainer = styled('div', {
   '&::-webkit-scrollbar-track-piece': {
     background: '$green300',
   },
-  
+
   '&::-webkit-scrollbar-thumb': {
     background: '$green500',
     borderRadius: 1000,
   },
-
 })
 
 export const Products = styled('section', {
@@ -75,13 +74,13 @@ export const Products = styled('section', {
     h2: {
       fontSize: '1.125rem',
       fontWeight: '400',
-      color: '$gray300'
+      color: '$gray300',
     },
 
     strong: {
       fontSize: '1.125rem',
     },
-  
+
     button: {
       border: 'none',
       background: 'transparent',
@@ -92,14 +91,14 @@ export const Products = styled('section', {
       marginTop: 'auto',
       fontSize: '1rem',
 
-      cursor: 'pointer', 
+      cursor: 'pointer',
 
       '&:hover': {
         color: '$green300',
         transition: '1s',
-      }
-    }
-  }
+      },
+    },
+  },
 })
 
 export const ImageContent = styled('div', {
@@ -111,14 +110,14 @@ export const ImageContent = styled('div', {
 
 export const Footer = styled('footer', {
   marginTop: 'auto',
-  
+
   section: {
     display: 'grid',
-    gridTemplateRows: "repeat(2, 1fr)",
+    gridTemplateRows: 'repeat(2, 1fr)',
     gap: 7,
 
     marginBottom: '3.56rem',
-    
+
     '& span': {
       display: 'flex',
       justifyContent: 'start',
@@ -126,22 +125,21 @@ export const Footer = styled('footer', {
       width: '100%',
     },
 
-    strong: {
-    },
-    
+    strong: {},
+
     '& span:nth-child(2)': {
       gridColumn: '3',
       gridRow: '1',
       justifyContent: 'end',
       color: '$gray300',
     },
-    
+
     '& strong:nth-child(3)': {
       fontSize: '1.125rem',
       gridColumn: '1',
       gridRow: '2',
     },
-    
+
     '& strong:nth-child(4)': {
       fontSize: '1.5rem',
       gridColumn: '3',
@@ -165,13 +163,12 @@ export const Footer = styled('footer', {
 
     '&:disabled': {
       opacity: 0.6,
-      cursor: 'not-allowed'
+      cursor: 'not-allowed',
     },
 
     '&:not(:disabled):hover': {
       background: '$green300',
       transition: '1s',
-    }
-  }
+    },
+  },
 })
-

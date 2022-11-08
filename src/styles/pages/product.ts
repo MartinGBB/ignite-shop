@@ -1,7 +1,7 @@
-import { styled } from "..";
+import { styled } from '..'
 
 export const ProductContainer = styled('main', {
-  display: "grid",
+  display: 'grid',
   gridTemplateColumns: 'repeat(2, 1fr)',
   alignItems: 'stretch',
   gap: '4rem',
@@ -17,7 +17,7 @@ export const ProductContainer = styled('main', {
     'main > button': {
       margin: '1rem 0',
     },
-  }
+  },
 })
 
 export const ImageContainer = styled('main', {
@@ -25,16 +25,16 @@ export const ImageContainer = styled('main', {
   maxHeight: '80vh',
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
   borderRadius: 8,
-  
-  display: "flex",
+
+  display: 'flex',
   alignItems: 'center',
-  justifyContent: "center",
+  justifyContent: 'center',
 })
 
 export const ProductDetails = styled('main', {
-  display: "flex",
+  display: 'flex',
   flexDirection: 'column',
-  
+
   h1: {
     fontSize: '"$2xl"',
     color: '$gray300',
@@ -64,15 +64,15 @@ export const ProductDetails = styled('main', {
     cursor: 'pointer',
     fontWeight: 'bold',
     fontSize: '$md',
-    
+
     '&:disabled': {
       opacity: 0.6,
-      cursor: 'not-allowed'
+      cursor: 'not-allowed',
     },
 
     '&:not(:disabled):hover': {
       background: '$green300',
       transition: '1s',
-    }
+    },
   },
 })
