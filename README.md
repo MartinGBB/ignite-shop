@@ -7,7 +7,7 @@
   Os estilos foram inspirado de um templete de [Figma](https://www.figma.com/file/vEQkbyFhkyq2NxxQmxQUSy/Ignite-Shop-2.0-(Copy)?node-id=2%3A12) da [Rocketseat](https://app.rocketseat.com.br/).
  Esté projeto conta com sua versão responsiva. 
  
- Se sentir vontade de acessar ao Deploy do projeto em produção, pode clicar :point_right: [aqui](https://ignite-shop-5ocejjggi-martingbb.vercel.app/) e será redireccionado.
+ Se sentir vontade de acessar ao Deploy do projeto em produção, pode clicar :point_right: [aqui](https://ignite-shop-prod.vercel.app/) e será redireccionado.
   
 ## Pré-visualização
 # ![Ignite Shop](https://images2.imgbox.com/b4/c4/M2lbhap1_o.png)
