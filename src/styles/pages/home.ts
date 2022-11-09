@@ -21,27 +21,22 @@ export const HomeContainer = styled('main', {
     '& button': {
       border: 'none',
       position: 'absolute',
-      top: '50%',
-      left: 40,
+      top: 'calc(50% - 48px/2)',
+      left: 16,
       background: 'transparent',
       lineHeight: 0,
-    },
-
-    '& svg': {
-      fill: '$gray100',
       cursor: 'pointer',
-      width: 25,
-      height: 25,
+      color: '$gray300',
     },
   },
 
   '.arrow--left': {
     transform: 'matrix(-1, 0, 0, 1, 0, 0)',
-    left: 25,
+    left: 28,
   },
 
   '.arrow--right': {
-    right: 16,
+    right: 1,
   },
 
   '.arrow--disabled': {
