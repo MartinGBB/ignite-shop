@@ -24,4 +24,10 @@ export const globalStyles = globalCss({
     xl: '1.5rem',
     '2xl': '2rem',
   },
+
+  '@media (max-width: 768px)': {
+    html: {
+      fontSize: '87.5%',
+    },
+  },
 })
