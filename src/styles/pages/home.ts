@@ -50,8 +50,6 @@ export const Product = styled('div', {
   position: 'relative',
   overflow: 'hidden',
 
-  minWidth: '34.5rem',
-
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -73,9 +71,11 @@ export const Product = styled('div', {
     justifyContent: 'space-between',
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
 
-    transform: 'translateY(110%)',
-    opacity: 0,
-    transition: 'all 0.2s ease-in-out',
+    '@media (min-width: 740px)': {
+      transform: 'translateY(110%)',
+      opacity: 0,
+      transition: 'all 0.2s ease-in-out',
+    },
 
     section: {
       display: 'flex',

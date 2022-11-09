@@ -10,6 +10,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { CaretRight, Handbag } from 'phosphor-react'
 import { useState } from 'react'
+
 interface HomeProps {
   products: {
     id: string
@@ -24,19 +25,15 @@ export default function Home({ products }: HomeProps) {
   const [loaded, setLoaded] = useState(false)
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-    slides: {
-      perView: 'auto',
-      spacing: 48,
-    },
-
     breakpoints: {
-      '(max-width: 450px)': {
-        slides: {
-          perView: 1,
-          spacing: 24,
-        },
+      '(min-width: 420px)': {
+        slides: { perView: 2, spacing: 24 },
+      },
+      '(min-width: 1000px)': {
+        slides: { perView: 3, spacing: 48 },
       },
     },
+    slides: { origin: 'center', perView: 1, spacing: 20 },
 
     initial: 0,
     slideChanged(slider) {
@@ -129,14 +126,8 @@ function Arrow(props: {
     >
       <button onClick={props.onClick}>
         {/* <div> */}
-        {props.left && (
-          // <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-          <CaretRight size={48} weight="regular" />
-        )}
-        {!props.left && (
-          // <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-          <CaretRight size={48} weight="regular" />
-        )}
+        {props.left && <CaretRight size={48} weight="regular" />}
+        {!props.left && <CaretRight size={48} weight="regular" />}
         {/* </div> */}
       </button>
     </div>
