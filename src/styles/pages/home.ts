@@ -8,29 +8,40 @@ export const HomeContainer = styled('main', {
   marginLeft: 'auto',
   minHeight: '80vh',
 
-
-
-
   position: 'relative',
 
   '.arrow': {
-    width: '30px',
-    height: '30px',
     position: 'absolute',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    '-webkit-transform': 'translateY(-50%)',
-    fill: '$gray100',
-    cursor: 'pointer',
+    background:
+      'linear-gradient(90deg, rgba(18, 18, 20, 0) 0%, rgba(18, 18, 20, 0.75) 100%)',
+
+    height: '80vh',
+    width: '6rem',
+
+    '& button': {
+      border: 'none',
+      position: 'absolute',
+      top: '50%',
+      left: 40,
+      background: 'transparent',
+      lineHeight: 0,
+    },
+
+    '& svg': {
+      fill: '$gray100',
+      cursor: 'pointer',
+      width: 25,
+      height: 25,
+    },
   },
 
   '.arrow--left': {
-    left: '5px',
+    transform: 'matrix(-1, 0, 0, 1, 0, 0)',
+    left: 25,
   },
 
   '.arrow--right': {
-    left: 'auto',
-    right: '5px',
+    right: 16,
   },
 
   '.arrow--disabled': {
