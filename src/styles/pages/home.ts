@@ -7,6 +7,35 @@ export const HomeContainer = styled('main', {
   padding: '0 2rem',
   marginLeft: 'auto',
   minHeight: '80vh',
+
+
+
+
+  position: 'relative',
+
+  '.arrow': {
+    width: '30px',
+    height: '30px',
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    '-webkit-transform': 'translateY(-50%)',
+    fill: '$gray100',
+    cursor: 'pointer',
+  },
+
+  '.arrow--left': {
+    left: '5px',
+  },
+
+  '.arrow--right': {
+    left: 'auto',
+    right: '5px',
+  },
+
+  '.arrow--disabled': {
+    display: 'none',
+  },
 })
 
 export const Product = styled('div', {
@@ -77,5 +106,36 @@ export const Product = styled('div', {
 
   '@media (max-width: 800px)': {
     minWidth: '23rem',
+  },
+})
+
+export const SliderContainer = styled('div', {
+  position: 'relative',
+  marginLeft: 'auto',
+  width: '100%',
+  maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
+
+  '.arrow': {
+    width: '30px',
+    height: '30px',
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    '-webkit-transform': 'translateY(-50%)',
+    fill: '$gray100',
+    cursor: 'pointer',
+  },
+
+  '.arrow--left': {
+    left: '5px',
+  },
+
+  '.arrow--right': {
+    left: 'auto',
+    right: '5px',
+  },
+
+  '.arrow--disabled': {
+    display: 'none',
   },
 })
