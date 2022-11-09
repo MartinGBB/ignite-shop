@@ -2,7 +2,7 @@
 
 ## Descrição do Projeto
 
-  Ignite Shop é uma loja online de vendas de roupas feita com ReactJS, Typescript e NextJS. Os dados dos produtos são consumidos de uma API gerada de [Stripe](https://stripe.com/docs), onde fiz cadastro das informaçoes de produtos.
+  Ignite Shop é uma loja online de vendas de roupas, feita com ReactJS, Typescript e NextJS. Os dados dos produtos são consumidos de uma API gerada de [Stripe](https://stripe.com/docs), onde fiz cadastro das informaçoes de produtos.
   
   Os estilos foram inspirado de um templete de [Figma](https://www.figma.com/file/vEQkbyFhkyq2NxxQmxQUSy/Ignite-Shop-2.0-(Copy)?node-id=2%3A12) da [Rocketseat](https://app.rocketseat.com.br/).
  Esté projeto conta com sua versão responsiva. 
