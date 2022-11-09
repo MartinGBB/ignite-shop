@@ -18,6 +18,7 @@ interface HomeProps {
     name: string
     imageUrl: string
     price: string
+    priceFormatted: string
   }[]
 }
 
@@ -91,7 +92,7 @@ export default function Home({ products }: HomeProps) {
                   <footer>
                     <section>
                       <strong>{product.name}</strong>
-                      <span>{product.price}</span>
+                      <span>{product.priceFormatted}</span>
                     </section>
                     <button onClick={() => handleAddItemToCart(product)}>
                       <Handbag size={32} color="#FFFFFF" weight="bold" />
