@@ -3,10 +3,12 @@ import { styled } from '..'
 export const ShoppingCartContainer = styled('div', {
   position: 'absolute',
   right: 0,
+  bottom: 0,
+  top: 0,
   zIndex: '1',
 
   background: '$gray800',
-  height: '100vh',
+  width: '100%',
   maxWidth: '30rem',
   padding: '3rem',
   paddingTop: '1.5rem',
@@ -44,7 +46,11 @@ export const CartEmpty = styled('div', {
 })
 
 export const ProductContainer = styled('div', {
+  height: '100%',
+  maxHeight: '35rem',
+  maxWidth: '30rem',
   overflow: 'auto',
+  marginBottom: '5rem',
 
   '&::-webkit-scrollbar': {
     width: '0.25rem',
@@ -109,7 +115,7 @@ export const ImageContent = styled('div', {
 })
 
 export const Footer = styled('footer', {
-  marginTop: 'auto',
+  // marginTop: 'auto',
 
   section: {
     display: 'grid',

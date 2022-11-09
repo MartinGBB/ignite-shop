@@ -1,21 +1,38 @@
 import { styled } from '..'
 
-export const HomeContainer = styled('main', {
+export const SliderContainer = styled('main', {
   display: 'flex',
   width: '100%',
   maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
   padding: '0 2rem',
   marginLeft: 'auto',
   minHeight: '80vh',
+
+  position: 'relative',
+
+  '.arrow--left': {
+    transform: 'matrix(-1, 0, 0, 1, 0, 0)',
+    left: 28,
+  },
+
+  '.arrow--right': {
+    right: 1,
+  },
+
+  '.arrow--disabled': {
+    display: 'none',
+  },
 })
+
+export const HomeContainer = styled('section', {})
 
 export const Product = styled('div', {
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
   borderRadius: 8,
   position: 'relative',
   overflow: 'hidden',
-
-  minWidth: '34.5rem',
+  minWidth: '30.5rem',
+  maxWidth: '36.5rem',
 
   display: 'flex',
   alignItems: 'center',
@@ -38,9 +55,11 @@ export const Product = styled('div', {
     justifyContent: 'space-between',
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
 
-    transform: 'translateY(110%)',
-    opacity: 0,
-    transition: 'all 0.2s ease-in-out',
+    '@media (min-width: 740px)': {
+      transform: 'translateY(110%)',
+      opacity: 0,
+      transition: 'all 0.2s ease-in-out',
+    },
 
     section: {
       display: 'flex',
@@ -60,11 +79,13 @@ export const Product = styled('div', {
       },
     },
 
-    '> span': {
+    '> button': {
       padding: '0.75rem',
       borderRadius: '6px',
       background: '$green500',
       lineHeight: 0,
+      border: 'none',
+      cursor: 'pointer',
     },
   },
 
