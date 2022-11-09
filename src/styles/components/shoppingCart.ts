@@ -48,6 +48,7 @@ export const CartEmpty = styled('div', {
 export const ProductContainer = styled('div', {
   height: '100%',
   maxHeight: '35rem',
+  maxWidth: '30rem',
   overflow: 'auto',
   marginBottom: '5rem',
 
