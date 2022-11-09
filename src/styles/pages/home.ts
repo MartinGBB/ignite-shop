@@ -49,6 +49,8 @@ export const Product = styled('div', {
   borderRadius: 8,
   position: 'relative',
   overflow: 'hidden',
+  minWidth: '30.5rem',
+  maxWidth: '36.5rem',
 
   display: 'flex',
   alignItems: 'center',

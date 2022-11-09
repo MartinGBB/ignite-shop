@@ -26,11 +26,11 @@ export default function Home({ products }: HomeProps) {
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     breakpoints: {
-      '(min-width: 420px)': {
+      '(min-width: 570px)': {
         slides: { perView: 2, spacing: 24 },
       },
       '(min-width: 1000px)': {
-        slides: { perView: 3, spacing: 48 },
+        slides: { perView: 'auto', spacing: 48 },
       },
     },
     slides: { origin: 'center', perView: 1, spacing: 20 },
