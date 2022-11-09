@@ -1,6 +1,6 @@
 import { styled } from '..'
 
-export const HomeContainer = styled('main', {
+export const SliderContainer = styled('main', {
   display: 'flex',
   width: '100%',
   maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
@@ -43,6 +43,8 @@ export const HomeContainer = styled('main', {
     display: 'none',
   },
 })
+
+export const HomeContainer = styled('section', {})
 
 export const Product = styled('div', {
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
@@ -116,36 +118,5 @@ export const Product = styled('div', {
 
   '@media (max-width: 800px)': {
     minWidth: '23rem',
-  },
-})
-
-export const SliderContainer = styled('div', {
-  position: 'relative',
-  marginLeft: 'auto',
-  width: '100%',
-  maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
-
-  '.arrow': {
-    width: '30px',
-    height: '30px',
-    position: 'absolute',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    '-webkit-transform': 'translateY(-50%)',
-    fill: '$gray100',
-    cursor: 'pointer',
-  },
-
-  '.arrow--left': {
-    left: '5px',
-  },
-
-  '.arrow--right': {
-    left: 'auto',
-    right: '5px',
-  },
-
-  '.arrow--disabled': {
-    display: 'none',
   },
 })

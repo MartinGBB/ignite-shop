@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { HomeContainer, Product } from '../styles/pages/home'
+import { HomeContainer, Product, SliderContainer } from '../styles/pages/home'
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 
@@ -50,12 +50,12 @@ export default function Home({ products }: HomeProps) {
   function handleAddItemToCart(product) {
     if (cartDetails[product.id]) return ''
 
-    return addItem({
+    addItem({
       currency: 'BRL',
       id: product.id,
       name: product.name,
       price: product.price,
-      formattedValue: product.price,
+      priceFormatted: product.price,
       price_id: product.defaultPriceId,
       image: product.imageUrl,
       description: product.description,
@@ -68,8 +68,8 @@ export default function Home({ products }: HomeProps) {
         <title>Home | Ignite</title>
       </Head>
 
-      <HomeContainer ref={sliderRef} className="navigation-wrapper">
-        <div className="keen-slider">
+      <SliderContainer ref={sliderRef} className="navigation-wrapper">
+        <HomeContainer className="keen-slider">
           {products.map((product) => {
             return (
               <Link
@@ -101,7 +101,7 @@ export default function Home({ products }: HomeProps) {
               </Link>
             )
           })}
-        </div>
+        </HomeContainer>
 
         {loaded && instanceRef.current && (
           <>
@@ -124,7 +124,7 @@ export default function Home({ products }: HomeProps) {
             />
           </>
         )}
-      </HomeContainer>
+      </SliderContainer>
     </>
   )
 }
@@ -162,10 +162,11 @@ export const getStaticProps: GetStaticProps = async () => {
       id: product.id,
       name: product.name,
       imageUrl: product.images[0],
-      price: new Intl.NumberFormat('pt-BR', {
+      priceFormatted: new Intl.NumberFormat('pt-BR', {
         style: 'currency',
         currency: 'BRL',
       }).format(price.unit_amount / 100),
+      price: Number(price.unit_amount),
     }
   })
 
