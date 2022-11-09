@@ -8,9 +8,10 @@ import { stripe } from '../lib/stripe'
 import Stripe from 'stripe'
 import Link from 'next/link'
 import Head from 'next/head'
-import { CaretRight, Handbag } from 'phosphor-react'
 import { useState } from 'react'
 import { useShoppingCart } from 'use-shopping-cart'
+import { Arrow } from '../components/_ui/arrow'
+import { Handbag } from 'phosphor-react'
 
 interface HomeProps {
   products: {
@@ -49,7 +50,7 @@ export default function Home({ products }: HomeProps) {
   })
 
   function handleAddItemToCart(product) {
-    if (cartDetails[product.id]) return ''
+    if (cartDetails[product.id]) return alert('produto já adicionado')
 
     addItem({
       currency: 'BRL',
@@ -127,27 +128,6 @@ export default function Home({ products }: HomeProps) {
         )}
       </SliderContainer>
     </>
-  )
-}
-
-function Arrow(props: {
-  disabled: boolean
-  left?: boolean
-  onClick: (e: any) => void
-}) {
-  const disabeld = props.disabled ? ' arrow--disabled' : ''
-
-  return (
-    <div
-      className={`arrow ${
-        props.left ? 'arrow--left' : 'arrow--right'
-      } ${disabeld}`}
-    >
-      <button onClick={props.onClick}>
-        {props.left && <CaretRight size={48} weight="regular" />}
-        {!props.left && <CaretRight size={48} weight="regular" />}
-      </button>
-    </div>
   )
 }
 
