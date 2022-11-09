@@ -10,6 +10,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { CaretRight, Handbag } from 'phosphor-react'
 import { useState } from 'react'
+import { useShoppingCart } from 'use-shopping-cart'
 
 interface HomeProps {
   products: {
@@ -23,6 +24,8 @@ interface HomeProps {
 export default function Home({ products }: HomeProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [loaded, setLoaded] = useState(false)
+
+  const { addItem, cartDetails } = useShoppingCart()
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     breakpoints: {
@@ -43,6 +46,21 @@ export default function Home({ products }: HomeProps) {
       setLoaded(true)
     },
   })
+
+  function handleAddItemToCart(product) {
+    if (cartDetails[product.id]) return ''
+
+    return addItem({
+      currency: 'BRL',
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      formattedValue: product.price,
+      price_id: product.defaultPriceId,
+      image: product.imageUrl,
+      description: product.description,
+    })
+  }
 
   return (
     <>
@@ -75,9 +93,9 @@ export default function Home({ products }: HomeProps) {
                       <strong>{product.name}</strong>
                       <span>{product.price}</span>
                     </section>
-                    <span>
+                    <button onClick={() => handleAddItemToCart(product)}>
                       <Handbag size={32} color="#FFFFFF" weight="bold" />
-                    </span>
+                    </button>
                   </footer>
                 </Product>
               </Link>
@@ -125,10 +143,8 @@ function Arrow(props: {
       } ${disabeld}`}
     >
       <button onClick={props.onClick}>
-        {/* <div> */}
         {props.left && <CaretRight size={48} weight="regular" />}
         {!props.left && <CaretRight size={48} weight="regular" />}
-        {/* </div> */}
       </button>
     </div>
   )

@@ -97,11 +97,13 @@ export const Product = styled('div', {
       },
     },
 
-    '> span': {
+    '> button': {
       padding: '0.75rem',
       borderRadius: '6px',
       background: '$green500',
       lineHeight: 0,
+      border: 'none',
+      cursor: 'pointer',
     },
   },
 
