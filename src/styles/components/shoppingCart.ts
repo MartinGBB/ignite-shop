@@ -112,10 +112,10 @@ export const ImageContent = styled('div', {
   minWidth: '6.37rem',
   maxHeight: '6.37rem',
   borderRadius: '8px',
-  
+
   '& img': {
     objectFit: 'cover',
-  }
+  },
 })
 
 export const Footer = styled('footer', {
