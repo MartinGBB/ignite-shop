@@ -38,9 +38,8 @@ export default function Home({ products }: HomeProps) {
         slides: { perView: 'auto', spacing: 48 },
       },
     },
-    slides: { origin: 'center', perView: 1, spacing: 20 },
+    slides: { perView: 1, spacing: 20 },
 
-    initial: 0,
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel)
     },
@@ -72,16 +71,15 @@ export default function Home({ products }: HomeProps) {
 
       <SliderContainer ref={sliderRef} className="navigation-wrapper">
         <HomeContainer className="keen-slider">
-          {products.map((product) => {
+          {products.map((product, index) => {
+            console.log(index)
             return (
               <Link
                 href={`/product/${product.id}`}
                 key={product.id}
                 prefetch={false}
               >
-                <Product
-                  className={`keen-slider__slide number-slide${product.id}`}
-                >
+                <Product className={`keen-slider__slide number-slide${index}`}>
                   <Image
                     placeholder="blur"
                     blurDataURL={product.imageUrl}

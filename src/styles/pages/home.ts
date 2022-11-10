@@ -2,21 +2,20 @@ import { styled } from '..'
 
 export const SliderContainer = styled('main', {
   display: 'flex',
+  marginLeft: 'auto',
   width: '100%',
   maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
-  padding: '0 2rem',
-  marginLeft: 'auto',
   minHeight: '80vh',
 
   position: 'relative',
 
   '.arrow--left': {
     transform: 'matrix(-1, 0, 0, 1, 0, 0)',
-    left: 28,
+    left: 0,
   },
 
   '.arrow--right': {
-    right: 1,
+    right: 0,
   },
 
   '.arrow--disabled': {
@@ -24,7 +23,10 @@ export const SliderContainer = styled('main', {
   },
 })
 
-export const HomeContainer = styled('section', {})
+export const HomeContainer = styled('section', {
+  paddingLeft: '0.5rem',
+  boxSizing: 'content-box',
+})
 
 export const Product = styled('div', {
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
@@ -32,7 +34,6 @@ export const Product = styled('div', {
   position: 'relative',
   overflow: 'hidden',
   minWidth: '30.5rem',
-  maxWidth: '36.5rem',
 
   display: 'flex',
   alignItems: 'center',

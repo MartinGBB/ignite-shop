@@ -109,14 +109,16 @@ export const Products = styled('section', {
 
 export const ImageContent = styled('div', {
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
-  width: '6.37rem',
-  height: '6.37rem',
+  minWidth: '6.37rem',
+  maxHeight: '6.37rem',
   borderRadius: '8px',
+
+  '& img': {
+    objectFit: 'cover',
+  },
 })
 
 export const Footer = styled('footer', {
-  // marginTop: 'auto',
-
   section: {
     display: 'grid',
     gridTemplateRows: 'repeat(2, 1fr)',
@@ -130,8 +132,6 @@ export const Footer = styled('footer', {
       alignItems: 'center',
       width: '100%',
     },
-
-    strong: {},
 
     '& span:nth-child(2)': {
       gridColumn: '3',
